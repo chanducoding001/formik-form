@@ -1,18 +1,19 @@
 import { ErrorMessage, Field } from 'formik';
 import React from 'react'
 import Select from 'react-select';
+import TextError from './TextError';
 const ReactSelect = (props) => {
     const { label, name, options,isSearchable, ...rest } = props
     return (
-        <div>
-            <label htmlFor={name}>{label}</label>
-            <Field name={name}>
+        <div className='form-control'>
+            <label htmlFor={name} className='field-label'>{label}</label>
+            <Field name={name} >
                 {
                     ({ form, field }) => {
                         const { setFieldValue,values } = form;
                         const { value } = field;
                         return (
-                            <Select {...field} {...rest} 
+                            <Select {...field} {...rest} className='select-library'
                             value={options ? options.find(option => option.value === value) : ''}
                             isSearchable={isSearchable?isSearchable:false}
                             options={options}
@@ -30,7 +31,7 @@ const ReactSelect = (props) => {
                     }
                 }
             </Field>
-            <ErrorMessage name={name}/>
+            <ErrorMessage name={name} component={TextError}/>
         </div>
     )
 }

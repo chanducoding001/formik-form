@@ -6,9 +6,9 @@ const Input = (props) => {
   return (
     <>
     <div className='form-control'>
-        <label htmlFor={name}>{label}</label>
-        <Field id={name} name={name} {...props}/>
-        <ErrorMessage name={name} />
+        <label htmlFor={name} className='field-label'>{label}</label>
+        <Field id={name} name={name} {...props} className='field-input padding-input'/>
+        <ErrorMessage name={name} component={TextError}/>
     </div>
     </>
   )

@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import FormikControl from './FormikControl';
 import FileUploads from './FileUploads';
 import Dummy from './Dummy';
-
 const FormikContainer = () => {
     const fileRef = useRef(null);
     const dropDownOptions = [
@@ -107,19 +106,24 @@ const FormikContainer = () => {
     return (
         <>
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-                        <Form>
+                        <div className='form-wrapper'>
+                        <Form className='formik-form-container'>
                             <FormikControl name='email' control='input' type='email' label='Email' />
                             <FormikControl name='textarea' control='textarea' type='text' label='Text Area' />
+                            <FormikControl name='reactSelect' isSearchable={true} control='reactSelect' label='React Select' placeholder="Select one Option" options={reactSelectOptions} />
+                            <FormikControl options={reactSelectOptions} isMulti={true} name='multiSelect' isSearchable={true} control='multiSelect' label='React Multi Select' placeholder='Select multiple Options'/>
                             <FormikControl name='select' control='select' type='text' label='Select' options={dropDownOptions} />
+                            <FormikControl name='date' control='date' type='date' label='Date Picker' placeholder="Date of Birth" />
                             <FormikControl name='radioOption' control='radio' type='radio' label='Radio Topic' options={radioOptions} />
                             <FormikControl name='checkBoxOption' control='checkbox' type='checkbox' label='checkBox Topic' options={checkBoxOptions} />
-                            <FormikControl name='date' control='date' type='date' label='Date Picker' placeholder="Date of Birth" />
-                            <FormikControl name='reactSelect' isSearchable={true} control='reactSelect' label='React Select' placeholder="select one Option" options={reactSelectOptions} />
-                            <FormikControl options={reactSelectOptions} isMulti={true} name='multiSelect' isSearchable={true} control='multiSelect' label='React Multi Select' placeholder='Select one or more options'/>
-                            <FileUploads name="files" fileRef={fileRef} />
-                            <Dummy name='dummy' label='Dummy Text'/>
-                            <button type='submit'>Submit</button>
+                            
+                            {/* <FileUploads name="files" fileRef={fileRef} />
+                            <Dummy name='dummy' label='Dummy Text'/> */}
+                            <div className='submit-btn-wrapper'>
+                              <button type='submit' className='submit-btn'>Submit</button>
+                            </div>
                         </Form>
+                        </div>
             </Formik>
         </>
     )

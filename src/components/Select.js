@@ -6,16 +6,16 @@ const Select = (props) => {
     const {label,name,options,...rest} = props;
   return (
     <div className='form-control'>
-        <label htmlFor={name}>{label}</label>
-        <Field name={name} id={name} as='select' {...rest}>
+        <label htmlFor={name} className='field-label'>{label}</label>
+        <Field name={name} id={name} as='select' {...rest} className='field-input'>
         {   options ?
             options.map((option)=>{
-                return <option key={option.value} value={option.value}>{option.key}</option>
+                return <option key={option.value} value={option.value} className='select-option'>{option.key}</option>
             })
             :[]
         }
         </Field>
-        <ErrorMessage name={name} />
+        <ErrorMessage name={name} component={TextError} />
     </div>
   )
 }

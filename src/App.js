@@ -5,6 +5,7 @@ import FormikContainer2 from './components2/FormikContainer2';
 import ReactSelect from './components2/ReactSelect';
 import FilesForm from './fileuploadsTest/FilesForm';
 import FormRender from './practice/FormRender';
+import './components/formikYup.css';
 
 function App() {
   return (

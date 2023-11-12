@@ -1,20 +1,21 @@
 import { ErrorMessage, Field } from 'formik';
 import React from 'react';
 import Select from 'react-select';
+import TextError from './TextError';
 
 const FinalMultiSelect = (props) => {
   const { label, name, options, isSearchable, ...rest } = props;
 
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <Field name={name}>
+    <div className='form-control'>
+      <label htmlFor={name} className='field-label'>{label}</label>
+      <Field name={name} >
         {({ form, field }) => {
           const { setFieldValue } = form;
           const { value } = field;
 
           return (
-            <Select
+            <Select className='select-library'
               {...field}
               {...rest}
               value={options ? options.filter((option) => value.includes(option.value)) : []}
@@ -28,7 +29,7 @@ const FinalMultiSelect = (props) => {
           );
         }}
       </Field>
-      <ErrorMessage name={name} component="div" />
+      <ErrorMessage name={name} component={TextError} />
     </div>
   );
 };

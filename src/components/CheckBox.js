@@ -6,14 +6,18 @@ const CheckBox = (props) => {
     const { label, name, options, ...rest } = props;
     // console.log(props);
     return (
-      <div>
-        <label htmlFor={name}>{label}</label>
+      <div className='form-control'>
+        <label htmlFor={name} className='field-label'>{label}</label>
         <Field name={name} {...rest} >
+          
           {
             ({ field }) => {
-              return options.map((option,index) => {
+              return <div className='options-container-wrapper'>
+              {
+              options.map((option,index) => {
                 return (
                   <React.Fragment key={index}>
+                    <div className='options-wrapper'>
                     <input
                       type='checkbox'
                       id={option.value}
@@ -22,14 +26,18 @@ const CheckBox = (props) => {
                       checked={field.value.includes(option.value)}
                     />
                     <label htmlFor={option.value}>{option.key}</label>
+                    </div>
                   </React.Fragment>
                 );
               })
             }
+              </div>
+            }
           }
           
+          
         </Field>
-        <ErrorMessage name={name} />
+        <ErrorMessage name={name} component={TextError} />
       </div>
     );
 }

@@ -1,0 +1,153 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    /* font-weight: 800; */
+    font-size: medium;
+}
+.form-wrapper{
+    height:100vh;
+    width:100vw;
+    margin:auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.formik-form-container{
+    background-color:antiquewhite;
+    height: 600px;
+    width:700px;
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin:auto; */
+    /* padding-top: 100px; */
+}
+.form-control{
+    /* background-color: blue; */
+    height:90px;
+    width:300px;
+    margin:10px;
+}
+.options-wrapper{
+    width:80px;
+    margin:5px 5px 5px 10px;
+    text-transform: capitalize;
+    display:flex;
+    justify-content: space-between;
+}
+.options-container-wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    width:260px;
+    justify-content: space-between;
+    /* width:270px; */
+    /* margin-right: 5px; */
+}
+.field-input{
+    width:250px;
+    height:40px;
+    transition: all 100ms;
+    background-color: hsl(0, 0%, 100%);
+    border-color: hsl(0, 0%, 80%);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    cursor: default;
+    outline: 0!important;
+    margin-top: 5px;
+    
+}
+.padding-input{
+    padding:10px;
+}
+.field-label{
+    text-transform: capitalize;
+    color:blue
+}
+.field-input:focus{
+    /* box-shadow: 0 0 0 1px #2684FF; */
+    /* border-width: 2px; */
+    border:2px solid #2684ff;
+}
+textarea{
+    resize:none;
+    overflow: hidden;
+    
+}
+.error{
+    color:red;
+}
+.select-library{
+    width:250px;
+    height:40px;
+    margin-top: 5px;
+}
+.submit-btn{
+    background-color: goldenrod;
+    width:200px;
+    height:40px;
+    border: none;
+    color:white;
+    border-radius: 4px;
+    margin: auto;
+}
+.submit-btn:hover{
+    background-color: black;
+    transition: all ease-out 0.2s;
+}
+.submit-btn-wrapper{
+    margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .form-wrapper{
+        height:100%;
+        
+    }
+    .formik-form-container{
+        height:100%;
+        width:500px;
+        padding-left:60px;
+        
+        /* width:250px; */
+    }
+    .select-option{
+        width:50px;
+    }
+    .submit-btn{
+        margin: auto;
+        width:150px;
+    }
+    .submit-btn-wrapper{
+        margin-left:58px;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
+    .form-wrapper{
+        height:100%;
+        width: 400px;
+        margin:auto;
+    }
+    .formik-form-container{
+        height:100%;
+        width:700px;
+        /* padding:100px; */
+        
+        /* width:250px; */
+        
+    }
+    .select-option{
+        width:50px;
+    }
+    .submit-btn{
+        margin: auto;
+        width:150px;
+    }
+    .submit-btn-wrapper{
+        margin-left:58px;
+    }
+  }
