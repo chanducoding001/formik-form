@@ -1,0 +1,14 @@
+.practice-form{
+    width:50vh;
+    height:50vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   /* margin: auto; */
+    background-color: aliceblue;
+}
+.form-control{
+    display:flex;
+    flex-direction: column;
+}

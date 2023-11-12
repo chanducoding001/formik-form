@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import FormikContainer from './components/FormikContainer';
+import ChatgptForm from './components2/ChatgptForm';
+import FormikContainer2 from './components2/FormikContainer2';
+import ReactSelect from './components2/ReactSelect';
+import FilesForm from './fileuploadsTest/FilesForm';
+import FormRender from './practice/FormRender';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FormikContainer/>
+      {/* <FilesForm/> */}
+      {/* <ReactSelect/> */}
+      {/* <FormikContainer2/> */}
+      {/* <FormRender/> */}
+      {/* <ChatgptForm/> */}
     </div>
   );
 }
